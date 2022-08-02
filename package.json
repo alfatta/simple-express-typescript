@@ -14,6 +14,7 @@
   "author": "Alfatta Rezqa <arwinnersyah@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "dotenv": "^16.0.1",
     "express": "^4.18.1"
   },
   "devDependencies": {
