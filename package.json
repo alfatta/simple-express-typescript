@@ -9,6 +9,7 @@
     "dev": "nodemon src/app.ts --exec 'npm run lint && ts-node'",
     "dev:no-lint": "nodemon src/app.ts",
     "lint": "eslint src --ext .ts",
+    "docs": "apidoc -c apidoc.json -i src -o docs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Alfatta Rezqa <arwinnersyah@gmail.com>",
@@ -30,6 +31,7 @@
     "@types/node": "^18.6.4",
     "@typescript-eslint/eslint-plugin": "^5.32.0",
     "@typescript-eslint/parser": "^5.32.0",
+    "apidoc": "^0.52.0",
     "eslint": "^8.21.0",
     "nodemon": "^2.0.19",
     "ts-node": "^10.9.1",

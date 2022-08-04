@@ -1,0 +1,9 @@
+{
+  "name": "Simple Express TypeScript",
+  "title": "API Documentation",
+  "template": {
+    "showRequiredLabels": true,
+    "withGenerator": false,
+    "withCompare": false
+  }
+}
