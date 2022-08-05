@@ -9,10 +9,21 @@ import errorHandler from "./middlewares/errorHandler.middleware";
 import requestLogger from "./middlewares/logger.middleware";
 import routes from "./routes";
 
+import dbMain from "./databases/main";
+
 const app: Application = express();
 
 app.use(express.json());
 app.use(requestLogger());
+
+dbMain.sequelize
+  .authenticate()
+  .then(() => {
+    logger.info(`DB Main connected successfully`);
+  })
+  .catch((error) => {
+    logger.error(`Failed to connect to DB Main. Reason :${error.message}`);
+  });
 
 app.use(routes);
 

@@ -4,18 +4,18 @@ import Joi, { ObjectSchema } from "joi";
 
 export default class Validator {
   static validateBody(rules: ObjectSchema | object) {
-    return this.validate("body", rules);
+    return this.validateRequest("body", rules);
   }
 
   static validateQuery(rules: ObjectSchema | object) {
-    return this.validate("query", rules);
+    return this.validateRequest("query", rules);
   }
 
   static validateParams(rules: ObjectSchema | object) {
-    return this.validate("params", rules);
+    return this.validateRequest("params", rules);
   }
 
-  static validate(object: keyof Request, rules: ObjectSchema | object) {
+  static validateRequest(object: keyof Request, rules: ObjectSchema | object) {
     const _rules = Joi.isSchema(rules) ? rules : Joi.object(rules);
     return (req: Request, res: Response, next: NextFunction) => {
       const result = _rules.validate(req[object]);
